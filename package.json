@@ -4,7 +4,7 @@
   "description": "Simple chart PNG generator using Chart.js and Canvas",
   "main": "index.js",
   "scripts": {
-    "watch": "node --watch index.js",
+    "dev": "node --watch index.js",
     "serve": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

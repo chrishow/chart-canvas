@@ -6,8 +6,8 @@ function createChart(options, config) {
     // console.log(options);
     // console.log(JSON.stringify(config, null, 2));
 
-    const width = options.width || 800;
-    const height = options.height || 400;
+    const width = options.width || 600;
+    const height = options.height || 300;
 
     const canvas = createCanvas(width, height);
     const ctx = canvas.getContext('2d');
