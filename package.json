@@ -11,6 +11,7 @@
   "author": "Chris How https://github.com/chrishow",
   "license": "MIT",
   "dependencies": {
+    "@canvas-fonts/arial": "^1.0.4",
     "canvas": "^2.11.2",
     "chart.js": "^4.4.7",
     "express": "^4.21.2"

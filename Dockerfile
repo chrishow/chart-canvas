@@ -1,18 +1,35 @@
-# Use the official Node.js 22 image as the base image
-FROM node:22
+# Description: Dockerfile for the nodejs application
+FROM node:12-alpine
 
 # Set the working directory
 WORKDIR /src
 
-# Copy files
-COPY . .
+RUN apk add --update --no-cache \
+    make \
+    g++ \
+    jpeg-dev \
+    cairo-dev \
+    giflib-dev \
+    pango-dev \
+    libtool \
+    autoconf \
+    automake
+
+# Copy package.json and package-lock.json
+COPY package.json ./
+COPY package-lock.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm install --prod
+RUN npm rebuild canvas --build-from-source
+
+
+# Copy files
+COPY . .
 
 
 # Expose the port the app runs on
 EXPOSE 3000
 
 # Command to run the application
-CMD ["node", "index.js"]
+CMD ["node", "src/index.js"]

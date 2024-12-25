@@ -1,5 +1,6 @@
 const { createCanvas, registerFont } = require('canvas');
 const Chart = require('chart.js/auto');
+registerFont(require("@canvas-fonts/arial"), { family: "Arial" });
 
 
 function createChart(options, config) {
